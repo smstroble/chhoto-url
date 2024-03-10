@@ -34,8 +34,8 @@
                 </div>
                 <div class=" pure-control-group">
                     <label for="shortUrl">Short URL (optional)</label>
-                    <input type="text" name="shortUrl" id="shortUrl" placeholder="Only a-z, 0-9, - and _ are allowed"
-                        pattern="[A-Za-z0-9_-]+" />
+                    <input type="text" name="shortUrl" id="shortUrl" placeholder="Only a-z, 0-9, -, /, and _ are allowed"
+                        pattern="^[A-Za-z0-9_-/]+$" />
                 </div>
                 <div class="pure-controls">
                     <button class="pure-button pure-button-primary">Shorten!</button>

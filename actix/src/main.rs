@@ -75,7 +75,7 @@ async fn error404() -> impl Responder {
 }
 
 // Handle a given shortlink
-#[get("/{shortlink}")]
+#[get("/{shortlink:.+}")]
 async fn link_handler(shortlink: web::Path<String>, data: web::Data<AppState>) -> impl Responder {
     let shortlink_str = shortlink.to_string();
     let longlink = utils::get_longurl(shortlink_str, &data.db);
@@ -107,7 +107,7 @@ async fn login(req: String, session: Session) -> HttpResponse {
 }
 
 // Delete a given shortlink
-#[delete("/api/del/{shortlink}")]
+#[delete("/api/del/{shortlink:.+}")]
 async fn delete_link(
     shortlink: web::Path<String>,
     data: web::Data<AppState>,
